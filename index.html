@@ -1,31 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css"
-  integrity="sha512-QTQigm89ZvHzwoJ/NgJPghQPegLIwnXuOXWEdAjjOvpE9uaBGeI05+auj0RjYVr86gtMaBJRKi8hWZVsrVe/Ug==" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-<title>Automated Visual testing</title>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  body {background-color: powderblue;}
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
 
-}
 </style>
-</head>
-<body>
-  <div class="jumbotron text-center">
-    <h1>Welcome to AutoTrust, the home of all your automated visual testing desires.</h1>
-    <p>Let's pretend we are coffee experts (most likely already applies to us all), and let's test just how good this coffe presentation is!</p>
+<body class="w3-light-grey">
+
+<!-- Content -->
+<div class="w3-content" style="max-width:1050px;margin-top:50px;margin-bottom:80px">
+
+  <div class="w3-panel">
+    <div class="w3-row-3">
+      <h1 class="w3-margin-bottom w3-center"><b>Welcome to Auto-Trust, a visual testing automation framework.</b></h1>
+    </div>
   </div>
-   <p>
-     <img src="images/coffee3.jpg" alt="beautiful coffee" style="width:1500px;height:600px;">
-   </p>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"
-  integrity="sha512-iceXjjbmB2rwoX93Ka6HAHP+B76IY1z0o3h+N1PeDtRSsyeetU3/0QKJqGyPJcX63zysNehggFwMC/bi7dvMig==" crossorigin="anonymous"></script>
+  <div class="w3-panel w3-margin-bottom">
+    <p>Auto-Trust aims to guide you in your projects development lifecycle, providing a base framework for automation needs
+    with focus on automated visual testing. The framework offers a base for site comparrisons of your development, staging,
+    or production enviroments, encapsulated as continuous integration/continuous deployment delivery. Testing is done in a
+    behaviour driven development approach, comparing new developmemnts against expected outcomes.</p>
+    <p>These visual comparrisons are achieved with python toolkits for site element differences, and site image quality is
+    assessed with a custom built machine learning model - a Convolutional Neural Network Image Classifier (CNN) that achieves 98.6%
+    accuracy in assessing image quality under six categories: high resolution, blur, colour distortion, JPEG compression, noise,
+    and spatial distortian. Assessing these quaulities are essential in terms of customer usability and general development
+    lifecycle endevors, such as speeding up sprint achievements/dealines, or avoiding painful deployment rollbacks.</p>
+  </div>
+
+  <!-- Slideshow -->
+  <div class="w3-container w3-margin-bottom">
+    <div class="w3-display-container mySlides">
+      <img src="/images/auto-trust.png" style="width:100%">
+      <div class="w3-display-topleft w3-container w3-padding-32">
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="/images/Autotest.PNG" style="width:100%">
+      <div class="w3-display-middle w3-container w3-padding-32">
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="/images/ML.PNG" style="width:100%">
+      <div class="w3-display-topright w3-container w3-padding-32">
+      </div>
+    </div>
+
+    <!-- Slideshow next/previous buttons -->
+    <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+
+      <div class="w3-center">
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-center w3-padding-32">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Where To Download</span>
+    </div>
+    <div class="w3-center w3-margin-bottom w3-xlarge ">
+      <a href="https://github.com/MatthewKearns19/AutoTrust_User_Testing_Workspace" class="w3-wide w3-hover-opacity"><b>GitHub</b></a>
+      <div class="fa fa-github"></div>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="w3-row w3-container">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">The nuts and bolts behind Auto-Trust</span>
+    </div>
+
+    <div class="w6-colw3-card-4  w3-container w3-padding-16 w3-margin-bottom">
+      <div class="w3-container">
+        <h3>Testing Framework Integrations</h3>
+        <p>The framework provides a base setup for automation test scripts, writting in Python Behave to execute test cases in the structured,
+          natural language, behavioural scenario format of the 'Gherkin language'. This of course follows a Behavior Driven Development approach
+          to your development lifecycle and provides a testing approach of balanced communication between business and developers. Test scripts execute
+          in the browser with Selenium, capturing site elements and comparing them to expected values. This automated testing framework can be
+          connected to your CI/CD pipeline(s) to achieve a fully automated integrated workflow.</p>
+      </div>
+    </div>
+
+    <div class="w6-col m6 w3-container w3-padding-16 w3-margin-bottom">
+      <div class="w3-container">
+        <h3>Site Classification</h3>
+        <p>Sitting behind your normal test cases is the option to to utilize Image Classification under two metrics - 1. Identical site element
+          comparrison to highligt any areas of your site that have changed during development, such as html elements that have not been closed,
+          or text distortion/fomatting as a result of unhandled encoding/decoding, and - 2. Image quality classification to highligt any of your
+          sites images that may have lost quality through your pipeline, such as JPEG compression. It is difficult to pin point what is causing
+          such occurances, and having a second pair of eyes on your site with logic behind image quality can point you in the right direction of a solution.</p>
+      </div>
+    </div>
+
+    <div class="w6-col m6 w3-container w3-padding-16 w3-margin-bottom">
+      <div class="w3-container">
+        <h3>Model Training</h3>
+        <p>In the models folder you can find a Convolutional Neural Network. This Machine learning Model is a custom built model trained to
+          classify the features of given image. This Model was trained on the KADID-10k Image Database (can be found at
+          http://database.mmsp-kn.de/kadid-10k-database.html). The dataset is composed of the same images with various levels
+          of distortions applied, providing the CNN with features to incrementally learn upon. Other Models were experimented with in testing,
+          such as applying transfer learning to the MobleNet Model, by fine-tuning the layers to desipher new featuers dedicated to our own task at hand.</p>
+      </div>
+    </div>
+
+    <div class="w6-col m6 center w3-container w3-padding-16 w3-margin-bottom">
+      <div class="w3-container ">
+      <h3>Combining it all together</h3>
+        <p> The behaviour ‘Scenario’ or ‘Scenario Outline’, is defined in a Gherkin Feature file, and outlines the steps that the user is to take, and the expected result
+          of these steps, defined with the natural language - 'Given', 'When', 'Then', 'And'. Each step to be performed has a corresponing function in the steps file, and parameters defined in
+          the scenario will be passed to the steps file to be executed. The steps execute the desired test in the browser with Selenium methodologies of browser element
+          capture and comparrison. To adjust the base framework to your own workflow, use Selenium to take a screenshot of the browser at a desired location as demonstrated
+          in the framwork. Selenium can mock a real user by using 'ActionChains', moving the browsers cursor which in turn allows you to capture the desired
+          screenshot at the desired site location, providing reproducability for comparrison. Store these screenshots in the pre-defined screeshots directory with an accosiated
+          image name. This image name can then be used in your scenarios, and adjusting the base functions or defining your own functions will allow you to invove image comparrison
+          of the browsers screenshot vs. the pre-defined screenshot. Any element differences will highlighted within a red bounding box, stored in the 'failed comparrisons' directory,
+          and trigger a failed test result. If image distortion classification is invoked as it is in the provided base framework, the image will be classified with teh appropriate
+          label of detected image quality, a confusion matrix will be outputted to the terminal output, and the same confussion matrix will be plotted and stored in the 'confusion
+          matrix output' directory as an image as evaluated feedback.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Grid -->
+  <div class="w3-row-padding">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Image Quality Distortion Assessment</span>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/images/origional.png" style="width:100%">
+        <div class="w3-container">
+          <p>Origional Image</p>
+          <p class="w3-opacity">An example of an origional image from the dataset.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/images/blur.png" style="width:100%">
+        <div class="w3-container">
+          <p>Blur Distortion</p>
+          <p class="w3-opacity">The origional image with blurred distortion applied.<br></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/images/color_distortion.png" style="width:100%">
+        <div class="w3-container">
+          <p>Colour Distortion</p>
+          <p class="w3-opacity">The origional image with colour distortion applied.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/images/compression.png" style="width:100%">
+        <div class="w3-container">
+          <p>Compression Distortion</p>
+          <p class="w3-opacity">The origional image with JPEG compression distortion applied.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/images/noise.png" style="width:100%">
+        <div class="w3-container">
+          <p>Noise Distortion</p>
+          <p class="w3-opacity">The origional image with noise distortion applied.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/images/spatial_distortion.png" style="width:100%">
+        <div class="w3-container">
+          <p>Spatial Distortion</p>
+          <p class="w3-opacity">The origional image with spatial distortion applied.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-margin-top">
+      <div class="w6-col m6 w3-container w3-padding-32 w3-margin-bottom">
+        <p class="float-left">The 10,00- origional images had various types of distortions applied for each distortion category mentioned above.
+           Each type of distortion also had three levels of distortion applied, low distortion, medium distortion,
+           and high distortion.</p>
+           <p>Blurs: <br><p class="w3-opacity">
+                   - Gaussian blur: filter with a variable Gaussian kernel<br>
+                   - Lens blur: filter with a circular kernel<br>
+                   - Motion blur: ​filter with a line kernel<br></p><p>
+              Color distortions<br><p class="w3-opacity">
+                   - Color diffusion:  Gaussian blur the color channels (a and b) in the Lab color-space<br>
+                   - Color shift:  randomly translate the green channel, and blend it into the original image masked by a gray level map: the normalized gradient magnitude of the original image<br>
+                   - Color quantization: convert to indexed image using minimum variance quantization and dithering with 8 to 64 colors<br>
+                   - Color saturation 1:  multiply the saturation channel in the HSV color-space by a factor<br>
+                   - Color saturation 2: multiply the color channels in the Lab colorspace by a factor<br></p><p>
+              Compression<br><p class="w3-opacity">
+                   - JPEG2000: standard compression<br>
+                   - JPEG: standard compression<br></p><p>
+              Noise<br><p class="w3-opacity">
+                   - White noise: add Gaussian white noise to the RGB image<br>
+                   - White noise in color component: add Gaussian white noise to the YCbCr converted image (both to the luminance 'Y' and the color channels 'Cb' and 'Cr')<br>
+                   - Impulse noise:  add salt and pepper noise to the RGB image<br>
+                   - Multiplicative noise: add speckle noise to the RGB image<br>
+                   - Denoise: add Gaussian white noise to RGB image, and then apply a denoising DnCNN to each channel separately<br></p><p>
+              Spatial distortions:<br><p class="w3-opacity">
+                   - Jitter: randomly scatter image data by warping each pixel with random small offsets (bicubic interpolation)<br>
+                   - Non-eccentricity patch:  randomly offset small patches in the image to nearby locations<br>
+                   - Pixelate: downsize image and upsize it back to the original size using nearest-neighbor interpolation in each case<br>
+                   - Quantization: quantize image values using N thresholds obtained using Otsus method</p>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+<!-- Footer -->
+
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  <a href="#" class="w3-button w3-dark-grey w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>Back To Top</a>
+  <h5>Model Training Dataset citation:</h5>
+  <p class="w3-center">@inproceedings{kadid10k,
+    title={KADID-10k: A Large-scale Artificially
+    Distorted IQA Database},
+    author={Lin, Hanhe and Hosu, Vlad and Saupe, Dietmar},
+    booktitle={2019 Tenth International Conference on
+    Quality of Multimedia Experience (QoMEX)},
+    pages={1--3},
+    year={2019},
+    organization={IEEE}}</p>
+  <p class="w3-center">@article{deepfl-iqa,
+    title={DeepFL-IQA: Weak Supervision for Deep IQA
+    Feature Learning},
+    author={Lin, Hanhe and Hosu, Vlad and Saupe, Dietmar},
+    journal={arXiv preprint arXiv:2001.08113},
+    year={2020}}</p>
+
+</footer>
+
+
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
 </body>
 </html>
