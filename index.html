@@ -87,33 +87,35 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-panel w3-padding-32 w3-light-grey w3-container w3-padding-16 w3-margin-bottom">
       <div class="w3-container">
         <h3>Testing Framework Integrations</h3>
-        <p>The framework provides a base setup for automation test scripts, writting in Python Behave to execute test cases in the structured,
-          natural language, behavioural scenario format of the 'Gherkin language'. This of course follows a Behavior Driven Development approach
-          to your development lifecycle and provides a testing approach of balanced communication between business and developers. Test scripts execute
+        <p>The framework provides a base setup for automation test scripts, written in Python Behave to execute test cases in the structured,
+          natural language, behavioural-scenario format of the 'Gherkin language'. By utilizing Python Behave, this follows a Behaviour-Driven Development testing approach
+          within your development lifecycle, promoting a testing workflow of balanced communication between test engineers, developers, and business. The test scripts execute
           in the browser with Selenium, capturing site elements and comparing them to expected values. This automated testing framework can be
-          connected to your CI/CD pipeline(s) to achieve a fully automated integrated workflow.</p>
+          connected to your CI/CD pipelines to achieve a fully automated integration.</p>
       </div>
     </div>
 
     <div class="w3-panel m6 w3-light-grey w3-container w3-padding-16 w3-margin-bottom">
       <div class="w3-container">
         <h3>Site Classification</h3>
-        <p>Sitting behind your normal test cases is the option to utilize Image Classification under two metrics - 1. Identical site element
-          comparison to highlight any areas of your site that have changed during development, such as html elements that have not been closed,
-          or text distortion/formatting as a result of unhandled encoding/decoding, and - 2. Image quality classification to highlight any of your
-          sites images that may have lost quality through your pipeline, such as JPEG compression. It is difficult to pin point what is causing
-          such occurences, and having a second pair of eyes on your site with logic behind image quality can point you in the right direction of a solution.</p>
+        <p>Sitting behind your normal test cases is the option to utilize image comparison under two metrics: <br> 1. Identical site element
+          comparison - to highlight any areas of your site that have changed during development that were either missed by manual testing or other system tests,
+          such as html tags that have not been closed or perhaps unexpected text formatting due to unhandled encoding/decoding. This is achieved by comparing exact
+          pixel values of screenshotted site location.<br> 2. Image quality classification - to highlight a chosen site location that contains an image which may have
+          lost quality through your pipeline, such as JPEG compression. It is difficult to locate what is causing occurrences of image distortion, and having a
+          second pair of eyes on your site with trained logic behind image quality assessment can point you in the right direction of a solution. This is achieved by assessing
+          the pixel features of a screenshotted site location and predicting/returning the image quality.</p>
       </div>
     </div>
 
     <div class="w3-panel m6 w3-light-grey w3-container w3-padding-16 w3-margin-bottom">
       <div class="w3-container">
         <h3>Model Training</h3>
-        <p>In the models folder you can find a Convolutional Neural Network. This Machine learning Model is a custom built model trained to
-          classify the features of given image. This Model was trained on the KADID-10k Image Database (can be found at
+        <p>In the 'models' folder you can find a Convolutional Neural Network. This Machine learning Model is a custom-built model trained to
+          classify the pixel features of given image, trained on the KADID-10k Image Database (can be found at
           http://database.mmsp-kn.de/kadid-10k-database.html). The dataset is composed of the same images with various levels
-          of distortions applied, providing the CNN with features to incrementally learn upon. Other Models were experimented with in testing,
-          such as applying transfer learning to the MobleNet Model, by fine-tuning the layers to desipher new featuers dedicated to our own task at hand.</p>
+          of distortions applied, providing the CNN with image features to incrementally learn upon. Other Models were experimented with in testing,
+          such as applying transfer learning to the MobileNet Model, by fine-tuning the layers to decipher new features dedicated to our own task at hand.</p>
       </div>
     </div>
 
@@ -121,16 +123,15 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <div class="w3-container ">
       <h3>Combining it all together</h3>
         <p> The behaviour ‘Scenario’ or ‘Scenario Outline’, is defined in a Gherkin Feature file, and outlines the steps that the user is to take, and the expected result
-          of these steps, defined with the natural language - 'Given', 'When', 'Then', 'And'. Each step to be performed has a corresponing function in the steps file, and parameters defined in
+          of these steps, defined with the natural language - 'Given', 'When', 'Then', 'And'. Each step to be performed has a corresponding function in the steps file, and parameters defined in
           the scenario will be passed to the steps file to be executed. The steps execute the desired test in the browser with Selenium methodologies of browser element
           capture and comparison. To adjust the base framework to your own workflow, use Selenium to take a screenshot of the browser at a desired location as demonstrated
-          in the framwork. Selenium can mock a real user by using 'ActionChains', moving the browsers cursor which in turn allows you to capture the desired
-          screenshot at the desired site location, providing reproducability for comparison. Store these screenshots in the pre-defined screeshots directory with an accosiated
-          image name. This image name can then be used in your scenarios, and adjusting the base functions or defining your own functions will allow you to invove image comparison
-          of the browsers screenshot vs. the pre-defined screenshot. Any element differences will highlighted within a red bounding box, stored in the 'failed comparisons' directory,
-          and trigger a failed test result. If image distortion classification is invoked as it is in the provided base framework, the image will be classified with teh appropriate
-          label of detected image quality, a confusion matrix will be outputted to the terminal output, and the same confussion matrix will be plotted and stored in the 'confusion
-          matrix output' directory as an image as evaluated feedback.</p>
+          in the framework. Selenium can mock a real user by using 'ActionChains', moving the browsers cursor which in turn allows you to capture the desired
+          screenshot at the desired site location, providing reproducibility for comparison. Store these screenshots in the 'pre_defined_screenshots' directory with an accosiated
+          image name (label). This image name can then be used in your scenarios, and adjusting the base functions or defining your own functions will allow you to invoke image comparison
+          on the browser's screenshot vs. the pre-defined screenshot. Any element differences (errors) will be highlighted within an red bounding box, triggering a failed test results
+          and stored in the 'failed_comparisons' directory. If image distortion classification is invoked as it is in the provided base framework, the image quality will be classified
+          and will also be returned as a test result.</p>
       </div>
     </div>
   </div>
