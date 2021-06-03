@@ -25,16 +25,16 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
   </div>
   <div class="w3-panel w3-margin-bottom">
-    <p>As final year college software project, Auto-Trust was undertaken to explore and emphasize importance
+    <p>As final year college software project, Auto-Trust was undertaken to explore and emphasize the importance
     of automated visual testing during the Software Development Lifecycle. Auto-Trust also aims to guide your project development as it can be used
     as a base framework for your automation needs, with focus on automated visual testing. It offers automated visual assessment tests of a User Interface, to be
     executed on your development, staging, or production environments and is setup to be encapsulated within a continuous integration/continuous
     delivery architecture. Testing is done in a Behaviour-Driven Development approach, where tests are created to compare expected outcomes of existing developments.</p>
     <p>These visual comparisons are achieved with various tools and technologies used to capture site element differences, via screenshotted pixel
-      comparison, and also the quality of any instances of site images can be assessed via a custom built machine learning model -
+      comparison, and also the quality of any instances of site images can be assessed via a custom-built machine learning model -
        a Convolutional Neural Network Image Classifier (CNN) that achieves 96.9% accuracy in assessing image quality under six
        categories: high resolution, blur, colour distortion, JPEG compression, noise, and spatial distortion. Assessing these
-       qualities are essential in terms of customer usability and general development lifecycle endeavours, such as speeding up
+       qualities are essential in terms of customer usability and general development lifecycle endeavors, such as speeding up
        developments to exceed deadlines, or avoiding painful deployment rollbacks.</p>
   </div>
 
@@ -72,7 +72,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <!-- Grid -->
   <div class="w3-row-padding w3-margin-bottom">
     <div class="w3-center w3-padding-32">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Where To Download</span>
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Code Repository</span>
     </div>
     <div class="w3-center w3-margin-bottom w3-xlarge ">
       <a href="https://github.com/MatthewKearns19/AutoTrust_User_Testing_Workspace" class="w3-wide w3-hover-opacity"><b>GitHub</b></a>
@@ -138,9 +138,31 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
           comparison on the browser's captured screenshot that has just been labeled vs. the pre-defined labeled screenshot. In this sense, using the name/label as a means of locating the two screenshots to compare. Any pixel
           differences (errors) will be highlighted within an red bounding box, triggering a failed test results and stored in the 'failed_comparisons' directory. If image distortion classification is invoked,
           the image quality will be classified and will also be returned as a test result.</p>
+      <h3>Results</h3>
+      <p> Normal test assertions of the browser elements will fail. Here is an example of the heading text of this site failing assertion when it does not match: </p>
+      <img src="/images2/Assertion.PNG" style="width:30%">
+
+      <p> But what if there is an area that is not accounted for in these test assertions? They will not be captured and the tets will pass. However, if visual comparison is invoked in the tests on a new screenshot vs. a predefined screenshot,
+        the test will fail if the similarity score is less that 100%. We can see the result of an unclosed HTML paragraph tag being captured: </p>
+      <img src="/images2/bounding_box.PNG" style="width:80%">
+
+      <p> But then, what if an image within the site fails the above exact pixel value comparison and we do not know why? If image quality assessment is invoked in the tests, we can see that not only does
+        it output a failed result, but it has also classified the image quality as noise distortion: </p>
+      <img src="/images2/noise.PNG" style="width:80%">
 
       </div>
     </div>
+
+    <div class="w3-panel m6 w3-light-grey w3-container w3-padding-16 w3-margin-bottom">
+      <div class="w3-container">
+        <h3>Issues to be future developed</h3>
+        <p>Currently, the exact pixel comparison of a browser captured screenshot vs. a predefined screenshot is susceptible to unreadable failed
+          results when a large element is removed, in turn causing a large page shift. In this case of a large page shift, many areas of the page are effected and also get flagged as an error.
+          The failed comparison result is unreadable in terms of pinpointing the root cause within many highlighted failed areas. Future development of
+          differentiating when to highlight errors needs to be tackled, with more intelligent methods of comparison.</p>
+      </div>
+    </div>
+
   </div>
 
 
@@ -213,7 +235,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
     <div class="w3-row-padding w3-center">
       <div class="w6-col m6 w3-container w3-padding-32 w3-margin-bottom">
-        <p class="float-left">The 10,000 origional images had various types of distortions applied for each distortion category mentioned above.
+        <p class="float-left">The 10,000 origional images from a the Kadid10k dataset had various types of distortions applied for each distortion category mentioned above.
            Each type of distortion also had three levels of distortion applied, low distortion, medium distortion, and high distortion. We can see
            with JPEG compression, noise and spatial distortion that it may be easy to miss these manually, and if it was noticed, how are we supposed
             to know what type of distortion is occuring to resolve the issue.</p>
