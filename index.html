@@ -21,19 +21,20 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
   <div class="w3-panel">
     <div class="w3-row-3">
-      <h1 class="w3-margin-bottom"><b>Welcome to Auto-Trust, a visual testing automation framework.</b></h1>
+      <h1 class="w3-margin-bottom"><b>Welcome to Auto-Trust, a visual testing automation</b></h1>
     </div>
   </div>
   <div class="w3-panel w3-margin-bottom">
     <p>Auto-Trust aims to guide you in your project's development lifecycle, providing a base framework for automation needs
-    with focus on automated visual testing. The framework offers a base for site comparisons of your development, staging,
-    or production environments, encapsulated as continuous integration/continuous deployment delivery. Testing is done in a
-    behaviour driven development approach, comparing new developments against expected outcomes.</p>
-    <p>These visual comparisons are achieved with python toolkits to capture site element differences, and site image quality is
-    assessed with a custom built machine learning model - a Convolutional Neural Network Image Classifier (CNN) that achieves 96.9%
-    accuracy in assessing image quality under six categories: high resolution, blur, colour distortion, JPEG compression, noise,
-    and spatial distortion. Assessing these qualities are essential in terms of customer usability and general development
-    lifecycle endeavours, such as speeding up sprint achievements/deadlines, or avoiding painful deployment rollbacks.</p>
+    with focus on automated visual testing. It offers automated visual assessment test of a User Interface, to be
+    executed on your development, staging, or production environments and setup to be encapsulated within a continuous integration/continuous
+    delivery architecture. Testing is done in a Behaviour-Driven Development approach, creating tests to compare expected outcomes of existing developments.</p>
+    <p>These visual comparisons are achieved with various tools and technologies, capturing site element differences via screenshotted pixel
+      comparison, and the quality of instances of site images is also assessed via a custom built machine learning model -
+       a Convolutional Neural Network Image Classifier (CNN) that achieves 96.9% accuracy in assessing image quality under six
+       categories: high resolution, blur, colour distortion, JPEG compression, noise, and spatial distortion. Assessing these
+       qualities are essential in terms of customer usability and general development lifecycle endeavours, such as speeding up
+       developments to exceed deadlines, or avoiding painful deployment rollbacks./p>
   </div>
 
   <!-- Slideshow -->
@@ -98,13 +99,15 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-panel m6 w3-light-grey w3-container w3-padding-16 w3-margin-bottom">
       <div class="w3-container">
         <h3>Site Classification</h3>
-        <p>Sitting behind your normal test cases is the option to utilize image comparison under two metrics: <br> 1. Identical site element
-          comparison - to highlight any areas of your site that have changed during development that were either missed by manual testing or other system tests,
-          such as html tags that have not been closed or perhaps unexpected text formatting due to unhandled encoding/decoding. This is achieved by comparing exact
-          pixel values of screenshotted site location.<br> 2. Image quality classification - to highlight a chosen site location that contains an image which may have
-          lost quality through your pipeline, such as JPEG compression. It is difficult to locate what is causing occurrences of image distortion, and having a
-          second pair of eyes on your site with trained logic behind image quality assessment can point you in the right direction of a solution. This is achieved by assessing
-          the pixel features of a screenshotted site location and predicting/returning the image quality.</p>
+        <p>Sitting behind your normal test cases is the option to utilize image comparison under two metrics: <br> 1. Identical User Interface
+          comparison - to highlight any areas of your site that have changed during development. These changes may cause errors that could potentially be missed
+          by manual testing or other system tests. Errors such as html tags that have not been closed or perhaps unexpected text formatting due to unhandled
+          encoding/decoding. This comparison is achieved by capturing a screenshot of a site location specified in the test, and comparing its 'exact pixel values' vs. a pre-defined screenshot,
+          seeking out any pixel contours if the images do not match and highlighting these areas of difference with a red bounding box. <br> 2. Image quality classification - to highlight
+          the quality of an image within your site as it may have lost quality through your deployment pipeline, such as JPEG compression. It is difficult to locate what
+          is causing occurrences of image distortion, and having a second pair of eyes on your site with trained logic behind image quality assessment can point you in the right
+          direction to a solution. If the User Interface contains an image that they want to assess, this second comparison metric can be invoked within a test and the image quality
+          assessment is achieved by assessing the 'pixel features' of this image, predicting/returning the image quality after being passes through the Convolutional Neural Network.</p>
       </div>
     </div>
 
@@ -114,24 +117,27 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <p>In the 'models' folder you can find a Convolutional Neural Network. This Machine learning Model is a custom-built model trained to
           classify the pixel features of given image, trained on the KADID-10k Image Database (can be found at
           http://database.mmsp-kn.de/kadid-10k-database.html). The dataset is composed of the same images with various levels
-          of distortions applied, providing the CNN with image features to incrementally learn upon. Other Models were experimented with in testing,
-          such as applying transfer learning to the MobileNet Model, by fine-tuning the layers to decipher new features dedicated to our own task at hand.</p>
+          of distortions applied, providing the CNN with image features to incrementally learn upon. Other Models were experimented,
+          such as applying transfer learning to a MobileNet model by fine-tuning the layers of the model to adjust its knowledge and
+          decipher new features bases on our own task at hand. The custom built model yielded better results and was chosen instead.</p>
       </div>
     </div>
 
     <div class="w3-panel m6 center w3-light-grey w3-container w3-padding-16 w3-margin-bottom">
       <div class="w3-container ">
       <h3>Combining it all together</h3>
-        <p> The behaviour ‘Scenario’ or ‘Scenario Outline’, is defined in a Gherkin Feature file, and outlines the steps that the user is to take, and the expected result
-          of these steps, defined with the natural language - 'Given', 'When', 'Then', 'And'. Each step to be performed has a corresponding function in the steps file, and parameters defined in
-          the scenario will be passed to the steps file to be executed. The steps execute the desired test in the browser with Selenium methodologies of browser element
-          capture and comparison. To adjust the base framework to your own workflow, use Selenium to take a screenshot of the browser at a desired location as demonstrated
-          in the framework. Selenium can mock a real user by using 'ActionChains', moving the browsers cursor which in turn allows you to capture the desired
-          screenshot at the desired site location, providing reproducibility for comparison. Store these screenshots in the 'pre_defined_screenshots' directory with an accosiated
-          image name (label). This image name can then be used in your scenarios, and adjusting the base functions or defining your own functions will allow you to invoke image comparison
-          on the browser's screenshot vs. the pre-defined screenshot. Any element differences (errors) will be highlighted within an red bounding box, triggering a failed test results
-          and stored in the 'failed_comparisons' directory. If image distortion classification is invoked as it is in the provided base framework, the image quality will be classified
-          and will also be returned as a test result.</p>
+        <p> The behavioural test ‘Scenario’ is defined in the 'Python Behave Feature' file ('.feature' file extension). The Scenario outlines the test steps that a user is to take and the expected result
+          of these steps, written in the natural 'Gherkin' language syntax - 'Given', 'When', 'Then', 'And'. Each step in the Scenario outlined has a corresponding
+          function in the steps file ('.step' file extension), and any parameters defined in the Scenario's steps will be passed to the corresponding function to be used.
+          The steps execute the desired test in a browser via 'Selenium webdriver'. To adjust the tests to your own workflow, use Selenium to take a screenshot of the browser at a
+          desired location, as demonstrated and described in the supplied codebase. Selenium can mock a real user by using 'ActionChains', moving the browsers cursor
+          to a specified site location by locating a browser element, which in turn allows you to instruct the test to capture a screenshot at your desired site location.
+          Move the screenshots from the 'browser_screenshot_outputs' directory and store them the 'pre_defined_screenshots' directory with an associated image name (to be used by the tests as a label).
+          This image name/label can then be defined in your scenarios as a parameter of a test step, and the functions for this step will trigger image
+          comparison on the browser's captured screenshot that has just been labeled vs. the pre-defined labeled screenshot. In this sense, using the name/label as a means of locating the two screenshots to compare. Any pixel
+          differences (errors) will be highlighted within an red bounding box, triggering a failed test results and stored in the 'failed_comparisons' directory. If image distortion classification is invoked,
+          the image quality will be classified and will also be returned as a test result.</p>
+          
       </div>
     </div>
   </div>
