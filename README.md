@@ -1,4 +1,5 @@
 # Auto-Trust, an automated visual testing framework.
+
 This repository is an example of a user's workspace in which automated tests of the framework are executed on. The
 hosted URL of this example user's workspace repository: https://auto-trust-user-workspace-example-staging-demo.netlify.app/
 
