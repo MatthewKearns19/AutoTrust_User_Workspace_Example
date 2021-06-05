@@ -145,10 +145,13 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
           the test will fail if the similarity score is less that 100%. We can see the result of an unclosed HTML paragraph tag being captured along with the failed heading text from the above assertion: </p>
         <img src="/images2/bounding_box.PNG" style="width:80%">
 
-        <p> But then, what if an image within the site fails the above exact pixel value comparison and we do not know why? If image quality assessment is invoked in the tests, we can see that not only does
+        <p> But then, what if an image within the site fails the above exact pixel value comparison and we do not know why? </p>
+        <img src="/images2/noise_diff.PNG" style="width:80%">
+
+        <p> If image quality assessment is invoked in the tests, we can see that not only does
           it output a failed result, but it has also classified the image quality as noise distortion. The same is true for the other categories of image quality that the CNN is trained upon, and the test
           would only pass if high resolution was classified: </p>
-        <img src="/images2/noise_cnn.PNG" style="width:80%">
+        <img src="/images2/noise_error_output.PNG" style="width:80%">
 
       </div>
     </div>
